@@ -21,4 +21,5 @@ clean:
 
 install:
 	sudo cp dummy.conf /usr/kernel/drv
-	sudo cp dummy /usr/kernel/drv/amd64
+	cp dummy /tmp
+	sudo ln -s /tmp/dummy /usr/kernel/drv/amd64/dummy

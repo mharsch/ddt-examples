@@ -37,4 +37,11 @@ clean:
 
 install:
 	sudo cp qotd_?.conf /usr/kernel/drv
-	sudo cp qotd_? /usr/kernel/drv/amd64
+	cp qotd_? /tmp
+	-sudo ln -s /tmp/qotd_1 /usr/kernel/drv/amd64/qotd_1
+	-sudo ln -s /tmp/qotd_2 /usr/kernel/drv/amd64/qotd_2
+	-sudo ln -s /tmp/qotd_3 /usr/kernel/drv/amd64/qotd_3
+
+clobber: clean
+	-sudo rm /usr/kernel/drv/amd64/qotd_?
+	-rm /tmp/qotd_?
